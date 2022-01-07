@@ -1,0 +1,42 @@
+﻿@model MyWatchList.ViewModels.OverzichtSeriesListViewModel
+
+@{
+    ViewData["Title"] = "Search";
+}
+
+<div class="container">
+    <div class="row">
+        <div id="Terug" class=" linkTerug col-lg-12">
+            <a asp-controller="Dashboard" asp-action="Index">< Terug</a>
+        </div>
+        <form class="col-lg-12 row" asp-controller="OverzichtSeries" asp-action="Search" method="get">
+            <div class="col-lg-4">
+                <h1 class="dashboardHeader">@ViewData["Title"]</h1>
+            </div>
+            <div class="col-lg-4">
+                <input asp-for="OverzichtSeriesSearch" class="form-control" />
+            </div>
+            <div class="col-lg-4">
+                <input type="submit" value="Zoeken" class="btn" id="btnZoeken"/>
+            </div>
+        </form>
+        <div class="col-lg-12" id="searchResults">
+            @{
+                if (Model.Series != null)
+                {
+                    foreach (var serie in Model.Series)
+                    {
+                        <div class="col-lg-12 searchItem card">
+                            <div class="card-body">
+                                <h5>@serie.Titel</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">@serie.JaarVanUitkomst</h6>
+                                <p class="card-text">Seizoenen: @serie.AantalSeizoenen</p>
+                                <p><a asp-controller="OverzichtSeries" asp-action="Details" asp-route-id="@serie.SerieID" class="card-link">Details</a></p>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+        </div>
+    </div>
+</div>

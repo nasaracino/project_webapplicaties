@@ -16,6 +16,8 @@ namespace MyWatchList.Models
         [Required]
         public int Duur { get; set; }
 
+        public string Omschrijving { get; set; }
+
         //navigatieproperties
         public Seizoen Seizoen { get; set; }
     }

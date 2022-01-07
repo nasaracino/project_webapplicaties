@@ -12,16 +12,11 @@ namespace MyWatchList.Models
         [Required]
         public string Titel { get; set; }
         [Required]
-        [DataType(DataType.Date)]
-        public DateTime JaarVanUitkomst { get; set; }
+        public string JaarVanUitkomst { get; set; }
         [Required]
         public int AantalSeizoenen { get; set; }
         public string MinimumLeeftijd { get; set; }
-        public byte CoverImg { get; set; }
-        [Required]
-        public string Omschrijving { get; set; }
-        [Required]
-        public string Genre { get; set; }
+        public string CoverImg { get; set; }
 
         //navigatieproperties
         public ICollection<Seizoen> Seizoenen { get; set; }

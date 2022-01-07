@@ -1,8 +1,26 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿
+
+@{
+    ViewData["Title"] = "Inloggen";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>@ViewData["Title"]</h1>
+<form>
+    <div class="container kader">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" />
+            <small id="emailHelp" class="form-text text-muted">Typ hier uw email in.</small>
+        </div>
+        <div class="form-group">
+            <label for="wachtwoord">Wachtwoord</label>
+            <input type="password" class="form-control" id="password" />
+            <small id="wachtwoordHelp" class="form-text text-muted">Typ hier uw wachtwoord in.</small>
+        </div>
+        <button type="submit" class="btn" id="login">Login</button>
+        <button type="submit" class="btn" id="registreren" asp-controller="Registreren" asp-action="Index">Registreren</button>
+        <div class="gastLogin">
+            <a asp-controller="Dashboard" asp-action="Index">Ik wil als gast doorgaan ></a>
+        </div>
+    </div>
+</form>

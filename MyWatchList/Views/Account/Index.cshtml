@@ -1,0 +1,45 @@
+﻿
+@model MyWatchList.ViewModels.AccountViewModel
+@{
+    ViewData["Title"] = "Uw Account";
+}
+
+<h1>@ViewData["Title"]</h1>
+<div class="container">
+    <div class="row col-lg-12">
+        <div class="col-lg-2">
+            <label asp-for="Voornaam">Voornaam:</label>
+        </div>
+        <div class="col-lg-10">
+            <label>@Model.Voornaam</label>
+        </div>
+    </div>
+    <div class="row col-lg-12">
+        <div class="col-lg-2">
+            <label asp-for="Achternaam">Achternaam:</label>
+        </div>
+        <div class="col-lg-10">
+            <label>@Model.Achternaam</label>
+        </div>
+    </div>
+    <div class="row col-lg-12">
+        <div class="col-lg-2">
+            <label asp-for="Email">Email:</label>
+        </div>
+        <div class="col-lg-10">
+            <label>@Model.Email</label>
+        </div>
+    </div>
+    <div class="row col-lg-12">
+        <div class="col-lg-2">
+            <label asp-for="Geboortedatum">Geboortedatum:</label>
+        </div>
+        <div class="col-lg-10">
+            <label>@Model.Geboortedatum.ToShortDateString()</label>
+        </div>
+    </div>
+    <div class="row col-lg-12">
+        <a asp-controller="Account" asp-action="Aanpassen" asp-route-id="@Model.GebruikerId">Je gegevens (en wachtwoord) aanpassen ></a>
+    </div>
+</div>
+

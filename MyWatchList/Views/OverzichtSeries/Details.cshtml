@@ -1,0 +1,32 @@
+﻿@model MyWatchList.ViewModels.SeriesDetailViewModel
+@{
+    ViewData["Title"] = Model.Titel;
+}
+<div class="container">
+    <div class="row">
+        <div id="Terug" class=" linkTerug col-lg-12">
+            <a asp-controller="OverzichtSeries" asp-action="Index">< Terug</a>
+        </div>
+        <div class="col-lg-4">
+            <h1 class="dashboardHeader">@ViewData["Title"]</h1>
+        </div>
+    </div>
+    <div class="row">
+        <h5 class="col-lg-4">Jaar van uitkomst: @Model.JaarVanUitkomst</h5>
+        <h5 class="col-lg-4">Aantal seizoenen: @Model.AantalSeizoenen</h5>
+        <h5 class="col-lg-4">Minimum leeftijd: @Model.MinimumLeeftijd</h5>
+    </div>
+    <div class="row">
+        <h5 class="col-lg-12">Cast</h5>
+        <ul>
+            @foreach (var acteur in Model.Acteurs)
+            {
+                string acteurNaam = acteur.Voornaam + " " + acteur.Achternaam;
+                <li>@acteurNaam</li>
+            }
+        </ul>
+    </div>
+    <div class="col-lg-12">
+        <a asp-controller="OverzichtSeries" asp-action="Delete" asp-route-id="@Model.SerieId">Serie verwijderen</a>
+    </div>
+</div>

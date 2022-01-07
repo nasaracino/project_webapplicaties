@@ -16,8 +16,7 @@ namespace MyWatchList.Models
         [Required]
         public string Omschrijving { get; set; }
         [Required]
-        [DataType(DataType.DateTime)]
-        public DateTime JaarVanUitkomst { get; set; }
+        public string JaarVanUitkomst { get; set; }
         [Required]
         public int AantalAfleveringen { get; set; }
         

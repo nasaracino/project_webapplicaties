@@ -1,0 +1,51 @@
+﻿@model MyWatchList.ViewModels.AccountViewModel
+@{
+    ViewData["Title"] = "Account Aanpassen";
+}
+
+<h1>@ViewData["Title"]</h1>
+<form asp-action="Aanpassen" asp-route-id="@Model.GebruikerId">
+    <div class="container">
+        <div class="row col-lg-12">
+            <div id="Terug" class=" linkTerug col-lg-12">
+                <a asp-controller="Account" asp-action="Index" asp-route-id="@Model.GebruikerId">< Terug</a>
+            </div>
+            <div class="form-group col-lg-6 registrerenLabel">
+                <label asp-for="Voornaam">Voornaam</label>
+            </div>
+            <div class="form-group col-lg-6">
+                <input type="text" class="form-control registrerenInput" asp-for="Voornaam" />
+                <span asp-validation-for="Voornaam" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-6 registrerenLabel">
+                <label for="achternaam">Achternaam</label>
+            </div>
+            <div class="form-group col-lg-6">
+                <input type="text" class="form-control registrerenInput" asp-for="Achternaam" />
+                <span asp-validation-for="Achternaam" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-6 registrerenLabel">
+                <label for="Email">Email</label>
+            </div>
+            <div class="form-group col-lg-6">
+                <input type="email" class="form-control registrerenInput" asp-for="Email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-6 registrerenLabel">
+                <label for="wachtwoord">Wachtwoord</label>
+            </div>
+            <div class="form-group col-lg-6">
+                <input type="password" class="form-control registrerenInput" asp-for="Wachtwoord" />
+                <span asp-validation-for="Wachtwoord" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-6 registrerenLabel">
+                <label for="geboortedatum">Geboortedatum</label>
+            </div>
+            <div class="form-group col-lg-6">
+                <input type="date" class="form-control registrerenInput" asp-for="Geboortedatum" />
+                <span asp-validation-for="Geboortedatum" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn" id="registreren">Aanpassen</button>
+        </div>
+    </div>
+</form>

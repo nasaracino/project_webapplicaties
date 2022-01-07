@@ -13,8 +13,7 @@ namespace MyWatchList.Models
         public string Voornaam { get; set; }
         [Required]
         public string Achternaam { get; set; }
-        [DataType(DataType.Date)]
-        public DateTime Geboortejaar { get; set; }
+        public string Geboortejaar { get; set; }
         [Required]
         public string LandVanHerkomst { get; set; }
 
